@@ -1,0 +1,65 @@
+trigger_phrases:
+  type: list
+  list_type: simple
+  default: "end it all|don't want to be here anymore|kill myself|suicidal|self harm|self-harm|no reason to go on|can't go on|want to die"
+  description: "Phrases that open the notice when they appear in a draft (case-insensitive, one per line, plain text - no regex). The draft text is matched in the browser only; nothing is sent anywhere."
+
+match_whole_words:
+  type: bool
+  default: true
+  description: "Only match a phrase when it stands on its own (so 'die' does not match 'diet')."
+
+notice_title:
+  type: string
+  default: "Before you post: you are not alone"
+  description: "Heading of the notice."
+
+notice_body:
+  type: string
+  textarea: true
+  default: "It sounds like you might be going through something very hard right now. Your post will still go up if you want it to, but if you need to talk to someone straight away, the people below are there at any hour."
+  description: "Body text of the notice. Plain text; line breaks are kept."
+
+resources:
+  type: list
+  list_type: simple
+  default: "Samaritans (UK and ROI), call 116 123, free, 24 hours https://www.samaritans.org/|Shout, text SHOUT to 85258 https://giveusashout.org/|Find a helpline in your country https://findahelpline.com/"
+  description: "Resources shown as buttons, one per line. Each line is a label followed by the link, for example: 'Samaritans, call 116 123 https://www.samaritans.org/'. The last https:// token on the line is the link."
+
+allow_post_anyway:
+  type: bool
+  default: true
+  description: "Show a 'Post anyway' button. When off, the member has to go back to the draft."
+
+post_anyway_label:
+  type: string
+  default: "Post anyway"
+
+go_back_label:
+  type: string
+  default: "Go back to my post"
+
+scope_categories:
+  type: list
+  list_type: category
+  default: ""
+  description: "Only check drafts in these categories. Empty means every category and personal messages."
+
+check_personal_messages:
+  type: bool
+  default: true
+  description: "Also check drafts of personal messages."
+
+cooldown_minutes:
+  type: integer
+  default: 60
+  min: 0
+  max: 10080
+  description: "After a member has seen the notice, do not show it again in this browser for this many minutes. 0 shows it on every matching post."
+
+min_trust_level_exempt:
+  type: integer
+  default: 4
+  min: 0
+  max: 5
+  description: "Members at or above this trust level never see the notice (staff are always exempt). Set to 5 to exempt nobody but staff."
