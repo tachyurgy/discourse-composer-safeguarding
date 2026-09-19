@@ -69,6 +69,6 @@ notice stays quiet.
 
 ## Author
 
-[Levelbrook Consulting](https://consulting.levelbrook.com) builds and maintains Discourse
+[Levelbrook Consulting](https://levelbrook.com/hire/) builds and maintains Discourse
 (Rails) deployments, plugins and theme components. MIT licensed. Issues and pull requests
 welcome.
